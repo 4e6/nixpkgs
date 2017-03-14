@@ -35,28 +35,28 @@ buildRustPackage rec {
     +++ b/Cargo.toml	2016-12-03 21:30:12.188170359 +0100
     @@ -40,15 +40,16 @@
      version = "*"
-     
+
      [dependencies.serde_json]
     -branch = "v0.9.0"
     -git = "https://github.com/serde-rs/json.git"
     +path = "${serde_json}/json"
     +version = "*"
-     
+
      [dependencies.toml]
      features = ["serde"]
      version = "*"
-     
+
      [dependencies.v8]
     -git = "https://github.com/dflemstr/v8-rs.git"
     +path = "${v8_rs}"
     +version = "*"
-     
+
      [features]
      shared = ["v8/shared"]
     EOF
   '';
 
-  depsSha256 = "1pci9iwf4y574q32b05gbc490iqw5i7shvqgb1gblchrihvlkddq";
+  depsSha256 = "0y6y66mfnlpks7bhvf6kdp5smnl0jfglq4iv2z49wjr6dv10c65p";
 
   buildInputs = [ llvmPackages.clang-unwrapped v8 ];
 
